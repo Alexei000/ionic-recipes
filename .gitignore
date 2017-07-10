@@ -32,3 +32,6 @@ $RECYCLE.BIN/
 .DS_Store
 Thumbs.db
 UserInterfaceState.xcuserstate
+/.vs/.gitlab
+/.vs/config/applicationhost.config
+/.vs/ionic-recipes/v15/.suo
