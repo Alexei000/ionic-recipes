@@ -6,19 +6,19 @@
   </ion-header>
   <ion-content>
     <ion-list>
-      <button ion-item icon-left (click)="onLoad(rootPage)">
+      <button ion-item icon-left (click)="onLoad(rootPage)" *ngIf="isAuthenticated">
         <ion-icon name="book"></ion-icon>
         Recipe book
       </button>
-      <button ion-item icon-left (click)="onLoad(signinPage)">
+      <button ion-item icon-left (click)="onLoad(signinPage)" *ngIf="!isAuthenticated">
         <ion-icon name="log-in"></ion-icon>
         Sign in
       </button>
-      <button ion-item icon-left (click)="onLoad(signupPage)">
+      <button ion-item icon-left (click)="onLoad(signupPage)" *ngIf="!isAuthenticated">
         <ion-icon name="person"></ion-icon>
         Sign up
       </button>
-      <button ion-item icon-left (click)="onLoadOut()">
+      <button ion-item icon-left (click)="onLogOut()" *ngIf="isAuthenticated">
         <ion-icon name="log-out"></ion-icon>
         Log out
       </button>
