@@ -69,8 +69,14 @@ export class RecipesPage {
                         this.recipeService.fetchList(token)
                             .subscribe((data) => {
                                 console.log("Success");
-                                if (data)
+                                if (data) {
                                     this.recipes = JSON.parse(data);
+                                    if (this.recipes)
+                                        this.recipes.forEach(r => {
+                                            if (!r.ingredients)
+                                                r.ingredients = [];
+                                        });
+                                }
                             },
                             error => this.handleError(error.json().error)
                             );

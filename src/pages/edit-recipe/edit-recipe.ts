@@ -37,6 +37,9 @@ export class EditRecipePage {
         console.log("Mode: ", this.mode);
         if (this.mode == "Edit") {
             this.recipe = this.navParams.get("recipe");
+            if (!this.recipe.ingredients)
+                this.recipe.ingredients = [];
+
             this.index = this.navParams.get("index");
         }
 
